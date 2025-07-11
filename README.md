@@ -1,0 +1,1 @@
+go run helper/helper.go -file=evil.exe && go generate ./... && GOOS=windows GOARCH=amd64 go build -trimpath -buildvcs=false -ldflags="-s -w -buildid= -extldflags '-Wl,--strip-all'" -gcflags="all=-N -l" -o sample.exe
